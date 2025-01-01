@@ -1,0 +1,218 @@
+<!-- Header with Navigation -->
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="../index.html" style="text-decoration: none; display: flex; align-items: center; gap: 1rem;">
+                <img src="../assets/images/logo.png" alt="Logo" id="logo">
+                <span>SIMATS Student Companion</span>
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../pages/cgpa-calculator.html">CGPA Calculator</a>
+            <a href="../pages/attendance.html">Attendance</a>
+            <a href="../pages/materials.html">Study Materials</a>
+        </div>
+        <div class="nav-controls">
+            <button id="theme-toggle-desktop" class="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </div>
+    </nav>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <nav class="mobile-nav">
+            <a href="../index.html">Home</a>
+            <a href="../pages/cgpa-calculator.html">CGPA Calculator</a>
+            <a href="../pages/attendance.html">Attendance</a>
+            <a href="../pages/materials.html">Study Materials</a>
+            <div class="mobile-theme-toggle">
+                <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<style>
+    .logo a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-color);
+        font-size: 0.9rem;
+    }
+
+    .logo img {
+        max-height: 32px;
+        transition: transform 0.2s ease;
+    }
+
+    .logo:hover img {
+        transform: scale(1.1);
+    }
+
+    /* Theme Toggle Styles */
+    .theme-toggle {
+        background: none;
+        border: none;
+        color: var(--text-color);
+        cursor: pointer;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: color 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+        color: var(--primary-color);
+    }
+
+    .mobile-theme-toggle {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .mobile-theme-toggle .theme-toggle {
+        width: 100%;
+        justify-content: flex-start;
+        font-size: 1.1rem;
+    }
+
+    /* Hamburger Menu Styles */
+    .hamburger {
+        display: none;
+        padding: 0.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        margin-left: 0.5rem;
+    }
+
+    .hamburger-box {
+        width: 24px;
+        height: 20px;
+        display: inline-block;
+        position: relative;
+    }
+
+    .hamburger-inner {
+        width: 24px;
+        height: 2px;
+        background-color: var(--text-color);
+        position: absolute;
+        transition: transform 0.15s ease;
+        top: 50%;
+        margin-top: -1px;
+    }
+
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: var(--text-color);
+        position: absolute;
+        transition: transform 0.15s ease;
+    }
+
+    .hamburger-inner::before {
+        top: -8px;
+    }
+
+    .hamburger-inner::after {
+        bottom: -8px;
+    }
+
+    /* Hamburger Animation */
+    .hamburger.is-active .hamburger-inner {
+        transform: rotate(45deg);
+    }
+
+    .hamburger.is-active .hamburger-inner::before {
+        top: 0;
+        opacity: 0;
+    }
+
+    .hamburger.is-active .hamburger-inner::after {
+        bottom: 0;
+        transform: rotate(-90deg);
+    }
+
+    /* Mobile Menu Overlay */
+    .mobile-menu-overlay {
+        display: none;
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+        background-color: var(--background-color);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .mobile-menu-overlay.is-active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+
+    .mobile-nav a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1.1rem;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid var(--border-color);
+        transition: color 0.3s ease;
+    }
+
+    .mobile-nav a:hover {
+        color: var(--primary-color);
+    }
+
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+        }
+
+        #theme-toggle-desktop {
+            display: none;
+        }
+
+        .hamburger {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-overlay {
+            display: block;
+        }
+
+        .nav-controls {
+            margin-left: auto;
+        }
+    }
+</style>

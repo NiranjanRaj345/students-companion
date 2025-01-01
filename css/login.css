@@ -1,0 +1,149 @@
+/* Login container */
+.login-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Login card */
+.login-card {
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    padding: 2rem;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.login-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.login-card h1 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.login-card h1 i {
+    color: var(--accent-color);
+}
+
+.subtitle {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+/* Login form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Input with icon */
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 1rem;
+    color: var(--text-light);
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-background);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: all var(--transition-speed);
+}
+
+.input-with-icon input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 20, 140, 0.1);
+}
+
+/* Toggle password button */
+.toggle-password {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 0;
+    transition: color var(--transition-speed);
+}
+
+.toggle-password:hover {
+    color: var(--primary-color);
+}
+
+/* Login button */
+.login-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all var(--transition-speed);
+    margin-top: 1rem;
+}
+
+.login-btn:hover {
+    background: var(--primary-light);
+    transform: translateY(-1px);
+}
+
+.login-btn:disabled {
+    background: var(--text-light);
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Error message */
+.error-message {
+    color: var(--error-color);
+    font-size: 0.9em;
+    min-height: 1.2em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .login-container {
+        margin: 1rem auto;
+    }
+
+    .login-card {
+        padding: 1.5rem;
+    }
+}

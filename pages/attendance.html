@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tracker - Student Companion</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+    <link rel="stylesheet" href="../css/attendance.css">
+    <link rel="stylesheet" href="../css/feedback.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    
+<div id="header-placeholder"></div>
+
+    <main class="attendance-tracker">
+        <h1>Attendance Tracker</h1>
+        <div class="tracker-container">
+            <div class="input-section">
+                <form id="attendanceForm">
+                    <div class="input-group">
+                        <label for="totalClasses">Total Classes:</label>
+                        <input type="number" id="totalClasses" min="1">
+                    </div>
+                    <div class="input-group">
+                        <label for="attendedClasses">Classes Attended:</label>
+                        <input type="number" id="attendedClasses" min="0">
+                    </div>
+                    <div class="button-group">
+                        <button type="button" id="calculateBtn" class="primary-button">Calculate</button>
+                        <button type="reset" id="resetBtn" class="secondary-button">Reset</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="results-section">
+                <div class="charts-container">
+                    <div class="chart-wrapper">
+                        <canvas id="attendanceChart"></canvas>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="progressChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <h3>Current Attendance</h3>
+                        <p id="currentAttendance">-</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>Classes You Can Miss</h3>
+                        <p id="allowableAbsences">-</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>Required Classes</h3>
+                        <p id="requiredClasses">-</p>
+                    </div>
+                </div>
+
+                <div class="feedback-container">
+                    <div class="feedback-message" id="feedbackMessage">
+                        Enter your attendance details to see analysis
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/attendance-tracker.js"></script>
+    <script src="../js/feedback.js"></script>
+</body>
+</html>

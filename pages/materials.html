@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Materials - Student Companion</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+    <link rel="stylesheet" href="../css/materials.css">
+    <link rel="stylesheet" href="../css/feedback.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="../assets/images/logo.png" alt="Logo" id="logo">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <div id="header-placeholder"></div>
+
+    <main class="materials-page">
+        <h1>Study Materials</h1>
+        
+        <div class="materials-container">
+            <div class="filters-section">
+                <div class="search-box">
+                    <input type="text" id="searchMaterials" placeholder="Search materials...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="department-filter">
+                    <select id="departmentSelect">
+                        <option value="">All Departments</option>
+                        <option value="cse">Computer Science Engineering</option>
+                        <option value="ece">Electronics & Communication</option>
+                        <option value="eee">Electrical & Electronics</option>
+                        <option value="mech">Mechanical Engineering</option>
+                        <option value="civil">Civil Engineering</option>
+                    </select>
+                </div>
+                <div class="type-filter">
+                    <select id="materialType">
+                        <option value="">All Types</option>
+                        <option value="conceptmaps">Concept Maps</option>
+                        <option value="papers">Question Papers</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="materials-grid" id="materialsGrid">
+                <!-- Materials will be dynamically loaded here -->
+            </div>
+
+            <div class="no-materials" id="noMaterials" style="display: none;">
+                <i class="fas fa-folder-open"></i>
+                <p>No materials found for the selected filters</p>
+            </div>
+
+            <div class="loading-spinner" id="loadingSpinner" style="display: none;">
+                <i class="fas fa-circle-notch fa-spin"></i>
+                <p>Loading materials...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/materials.js"></script>
+    <script src="../js/feedback.js"></script>
+</body>
+</html>
